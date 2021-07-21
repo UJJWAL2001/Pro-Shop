@@ -1,8 +1,11 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import products from './data/products.js'
+import connectDB from './config/db.js' // when using ES in node it is mandatory to add .js extension
 
 dotenv.config()
+
+connectDB()
 
 const app = express()
 
