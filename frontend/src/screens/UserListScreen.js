@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { LinkContainer } from 'react-router-bootstrap'
 import { Button, Table } from 'react-bootstrap'
 import { useSelector, useDispatch } from 'react-redux'
@@ -64,7 +64,7 @@ const UserListScreen = ({ history }) => {
                   )}
                 </td>
                 <td>
-                  <LinkContainer to={`/user/${user._id}/edit`}>
+                  <LinkContainer to={`/admin/user/${user._id}/edit`}>
                     <Button variant='light' className='btn-sm'>
                       <i className='fas fa-edit'></i>
                     </Button>
