@@ -8,7 +8,7 @@ import FormContainer from '../components/FormContainer'
 import { getUserDetails, updateUser } from '../actions/userActions'
 import { USER_UPDATE_RESET } from '../constants/userConstants'
 
-const UserEditScreen = ({ location, history, match }) => {
+const UserEditScreen = ({ history, match }) => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [isAdmin, setIsAdmin] = useState(false)
@@ -34,7 +34,7 @@ const UserEditScreen = ({ location, history, match }) => {
       })
       history.push('/admin/userlist')
     } else {
-      if (!user.name || user._id !== userId) {
+      if (!user || user._id !== userId) {
         dispatch(getUserDetails(userId))
       } else {
         setName(user.name)
