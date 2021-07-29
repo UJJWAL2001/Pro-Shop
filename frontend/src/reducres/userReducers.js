@@ -26,16 +26,16 @@ import {
   USER_UPDATE_SUCCESS,
 } from '../constants/userConstants'
 
-export const userLoginReducer = (state = {}, action) => {
+export const userLoginReducer = (state = { userInfo: {} }, action) => {
   switch (action.type) {
     case USER_LOGIN_REQUEST:
-      return { loading: true }
+      return { userInfo: {}, loading: true }
     case USER_LOGIN_SUCCESS:
       return { loading: false, userInfo: action.payload }
     case USER_LOGIN_FAIL:
       return { loading: false, error: action.payload }
     case USER_LOGOUT:
-      return {}
+      return { userInfo: {} }
     default:
       return state
   }
